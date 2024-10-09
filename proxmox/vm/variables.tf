@@ -14,6 +14,11 @@ variable "pm_api_token_secret" {
   sensitive   = true
 }
 
+variable "api_token" {
+  description = "Concatenated API token"
+  type        = string
+}
+
 variable "vm_name" {
   description = "Virtual Machine Name"
   type        = string
