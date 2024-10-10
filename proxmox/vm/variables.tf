@@ -1,24 +1,3 @@
-variable "pm_api_url" {
-  description = "Proxmox API URL"
-  type        = string
-}
-
-#variable "pm_api_token_id" {
-#  description = "Proxmox API Token ID"
-#  type        = string
-#}
-#
-#variable "pm_api_token_secret" {
-#  description = "Proxmox API Token Secret"
-#  type        = string
-#  sensitive   = true
-#}
-
-variable "api_token" {
-  description = "Concatenated API token"
-  type        = string
-}
-
 variable "vm_name" {
   description = "Virtual Machine Name"
   type        = string
@@ -53,3 +32,4 @@ variable "ipv4_gw" {
   description = "IPv4 gateway address"
   type        = string
 }
+

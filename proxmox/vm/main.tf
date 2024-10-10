@@ -1,10 +1,10 @@
 resource "proxmox_virtual_environment_vm" "test_vm" {
 
-  name      = var.vm_name 
+  name      = var.vm_name
   node_name = var.vm_node
 
   clone {
-    vm_id = var.clone_vm_id 
+    vm_id = var.clone_vm_id
   }
 
   cpu {
@@ -12,14 +12,14 @@ resource "proxmox_virtual_environment_vm" "test_vm" {
   }
 
   memory {
-    dedicated = var.memory 
+    dedicated = var.memory
   }
 
   initialization {
     ip_config {
       ipv4 {
-        address = var.ipv4_address 
-        gateway = var.ipv4_gw 
+        address = var.ipv4_address
+        gateway = var.ipv4_gw
       }
     }
   }
