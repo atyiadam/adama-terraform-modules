@@ -1,5 +1,6 @@
 resource "proxmox_virtual_environment_vm" "test_vm" {
 
+
   name      = var.vm_name
   node_name = var.vm_node
 
@@ -22,6 +23,13 @@ resource "proxmox_virtual_environment_vm" "test_vm" {
         gateway = var.ipv4_gw
       }
     }
+  }
+
+  lifecycle {
+    ignore_changes = [
+      network_device,
+      vga
+    ]
   }
 
 }
