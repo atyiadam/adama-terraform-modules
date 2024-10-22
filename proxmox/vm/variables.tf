@@ -33,3 +33,13 @@ variable "ipv4_gw" {
   type        = string
 }
 
+variable "dns_domain" {
+  description = "The DNS search domain"
+  type        = string
+}
+
+variable "dns_servers" {
+  description = "The list of DNS servers"
+  type        = list(string)
+}
+
