@@ -6,7 +6,7 @@ terraform {
       source  = "bpg/proxmox"
       version = ">= 0.66.1"
     }
-    
+
     powerdns = {
       source  = "pan-net/powerdns"
       version = ">= 1.5.0"
