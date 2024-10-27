@@ -43,3 +43,8 @@ variable "dns_servers" {
   type        = list(string)
 }
 
+variable "dns_a_record" {
+  description = "Decide to create a DNS A record or not"
+  type        = bool
+}
+

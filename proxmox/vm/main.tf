@@ -39,9 +39,10 @@ resource "proxmox_virtual_environment_vm" "vm" {
 }
 
 resource "powerdns_record" "record-a" {
+  count   = var.dns_a_record ? 1 : 0
   zone    = var.dns_domain
-  name    = "ns1.${var.dns_domain}"
+  name    = "${var.vm_name}.${var.dns_domain}"
   type    = "A"
   ttl     = 300
-  records = [var.ipv4_address]
+  records = [regex("^([^/]+)", var.ipv4_address)[0]]
 }
