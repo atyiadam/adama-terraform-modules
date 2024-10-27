@@ -38,3 +38,10 @@ resource "proxmox_virtual_environment_vm" "test_vm" {
 
 }
 
+resource "powerdns_record" "record-a" {
+  zone    = var.dns_domain
+  name    = "ns1.${var.dns_domain}"
+  type    = "A"
+  ttl     = 300
+  records = [var.ipv4_address]
+}
