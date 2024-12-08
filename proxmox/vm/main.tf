@@ -1,6 +1,6 @@
 resource "proxmox_virtual_environment_vm" "vm" {
 
-  name      = var.vm_name
+  name      = trimsuffix("${var.vm_name}.${var.dns_domain}", ".")
   node_name = var.vm_node
 
   clone {
@@ -9,6 +9,10 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   cpu {
     cores = var.cpu
+  }
+
+  agent {
+    enabled = true
   }
 
   memory {
