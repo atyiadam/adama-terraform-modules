@@ -18,6 +18,11 @@ variable "cpu" {
   type        = string
 }
 
+variable "cpu_type" {
+  description = "Type of CPU"
+  type        = string
+}
+
 variable "memory" {
   description = "Memory size"
   type        = string

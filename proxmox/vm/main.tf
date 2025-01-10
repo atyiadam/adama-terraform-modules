@@ -9,6 +9,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   cpu {
     cores = var.cpu
+    type  = var.cpu_type
   }
 
   agent {
