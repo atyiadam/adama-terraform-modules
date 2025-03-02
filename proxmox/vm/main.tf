@@ -5,6 +5,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   clone {
     vm_id = var.clone_vm_id
+    node_name = var.clone_node_name
   }
 
   cpu {
@@ -36,6 +37,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   lifecycle {
     ignore_changes = [
+      node_name,
       network_device,
       vga
     ]

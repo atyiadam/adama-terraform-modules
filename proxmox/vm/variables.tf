@@ -13,6 +13,11 @@ variable "clone_vm_id" {
   type        = string
 }
 
+variable "clone_node_name" {
+  description = " The name of the source node (leave blank, if equal to the node_name argument)"
+  type        = string
+}
+
 variable "cpu" {
   description = "Number of CPU cores"
   type        = string
